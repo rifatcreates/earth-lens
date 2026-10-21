@@ -62,3 +62,10 @@ export interface AQIResponse {
   status: string;
   data: AQIData;
 }
+
+export interface Location {
+  name: string;
+  country: string;
+  lat: number;
+  lon: number
+}
