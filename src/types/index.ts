@@ -66,6 +66,20 @@ export interface AQIResponse {
 export interface Location {
   name: string;
   country: string;
+  region?: string;
   lat: number;
   lon: number
+}
+
+export interface GeoResult {
+  id: number;
+  name: string;
+  latitude: number;
+  longitude: number;
+  country?: string;
+  admin1?: string;
+}
+
+export interface GeoResponse {
+  results?: GeoResult[];
 }
