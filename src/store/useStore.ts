@@ -5,14 +5,17 @@ import type { Location } from "@/types";
 
 export type Theme = "light" | "dark";
 export type TempUnit = "celsius" | "fahrenheit";
+export type WindUnit = "kmh" | "mph";
 
 interface StoreState {
   theme: Theme;
   tempUnit: TempUnit;
+  windUnit: WindUnit;
   selectedLocation: Location;
   recentSearches: Location[];
   toggleTheme: () => void;
   toggleTempUnit: () => void;
+  toggleWindUnit: () => void;
   setSelectedLocation: (location: Location) => void;
   addRecentSearch: (location: Location) => void;
   clearRecentSearches: () => void;
@@ -30,6 +33,7 @@ export const useStore = create<StoreState>()(
     (set) => ({
       theme: "dark",
       tempUnit: "celsius",
+      windUnit: "kmh",
       selectedLocation: DEFAULT_LOCATION,
       recentSearches: [],
 
@@ -41,6 +45,11 @@ export const useStore = create<StoreState>()(
       toggleTempUnit: () =>
         set((state) => ({
           tempUnit: state.tempUnit === "celsius" ? "fahrenheit" : "celsius",
+        })),
+
+      toggleWindUnit: () =>
+        set((state) => ({
+          windUnit: state.windUnit === "kmh" ? "mph" : "kmh",
         })),
 
       setSelectedLocation: (location) => set({ selectedLocation: location }),

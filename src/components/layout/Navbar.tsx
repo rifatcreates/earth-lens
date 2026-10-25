@@ -7,8 +7,10 @@ import { useGeolocation } from "@/hooks/useGeolocation";
 export default function Navbar() {
   const theme = useStore((state) => state.theme);
   const tempUnit = useStore((state) => state.tempUnit);
+  const windUnit = useStore((state) => state.windUnit);
   const toggleTheme = useStore((state) => state.toggleTheme);
   const toggleTempUnit = useStore((state) => state.toggleTempUnit);
+  const toggleWindUnit = useStore((state) => state.toggleWindUnit);
   const setSelectedLocation = useStore((state) => state.setSelectedLocation);
 
   const { isLocating, error, getCurrentPosition } = useGeolocation();
@@ -53,6 +55,14 @@ export default function Navbar() {
             aria-label="Switch temperature unit"
           >
             {tempUnit === "celsius" ? "°C" : "°F"}
+          </Button>
+
+          <Button
+            variant="ghost"
+            onClick={toggleWindUnit}
+            aria-label="Switch wind speed unit"
+          >
+            {windUnit === "kmh" ? "km/h" : "mph"}
           </Button>
 
           <Button
