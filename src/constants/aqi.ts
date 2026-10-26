@@ -75,12 +75,12 @@ export function getAQILevel(value: number): AQILevel {
 }
 
 export const POLLUTANTS = [
-  { key: "pm25", label: "PM2.5", unit: "µg/m³" },
-  { key: "pm10", label: "PM10", unit: "µg/m³" },
-  { key: "o3", label: "O₃", unit: "ppb" },
-  { key: "no2", label: "NO₂", unit: "ppb" },
-  { key: "so2", label: "SO₂", unit: "ppb" },
-  { key: "co", label: "CO", unit: "ppm" },
+  { key: "pm25", label: "PM2.5", name: "Fine particles" },
+  { key: "pm10", label: "PM10", name: "Coarse particles" },
+  { key: "o3", label: "O₃", name: "Ozone" },
+  { key: "no2", label: "NO₂", name: "Nitrogen dioxide" },
+  { key: "so2", label: "SO₂", name: "Sulfur dioxide" },
+  { key: "co", label: "CO", name: "Carbon monoxide" },
 ] as const;
 
 export type PollutantKey = (typeof POLLUTANTS)[number]["key"];

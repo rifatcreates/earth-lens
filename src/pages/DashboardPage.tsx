@@ -10,6 +10,7 @@ import { useAQI } from "@/hooks/useAQI";
 import { formatTime } from "@/utils/dateUtils";
 import { getUVLabel } from "@/utils/weatherUtils";
 import { formatVisibility, formatWindSpeed } from "@/utils/unitConverter";
+import AQISection from "@/components/aqi/AQISection";
 
 export default function DashboardPage() {
   const location = useStore((state) => state.selectedLocation);
@@ -108,11 +109,11 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {aqi.data && (
-        <p className="text-sm text-muted-foreground">
-          Air Quality Index: {aqi.data.data.aqi}
-        </p>
-      )}
+      <AQISection
+        data={aqi.data?.data}
+        isLoading={aqi.isLoading}
+        errorMessage={aqi.error ? aqi.error.message : null}
+      />
     </div>
   );
 }
