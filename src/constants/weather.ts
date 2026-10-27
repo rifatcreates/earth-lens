@@ -41,3 +41,13 @@ export const UV_LEVELS = [
   { max: 10, label: "Very High" },
   { max: Infinity, label: "Extreme" },
 ];
+
+export const NIGHT_ICONS: Record<number, string> = {
+  0: "🌙",
+  1: "🌙",
+  2: "☁️",
+  51: "🌧️",
+  53: "🌧️",
+  55: "🌧️",
+  80: "🌧️",
+};

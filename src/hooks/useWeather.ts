@@ -7,7 +7,7 @@ async function fetchWeather(lat: number, lon: number): Promise<WeatherResponse> 
     latitude: String(lat),
     longitude: String(lon),
     current:
-      "temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,uv_index,visibility",
+      "temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,uv_index,visibility,is_day",
     hourly:
       "temperature_2m,precipitation_probability,wind_speed_10m,relative_humidity_2m",
     daily:

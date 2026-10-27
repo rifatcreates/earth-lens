@@ -16,7 +16,7 @@ export default function CurrentWeather({
   weather,
   tempUnit,
 }: CurrentWeatherProps) {
-  const info = getWeatherInfo(weather.weather_code);
+  const info = getWeatherInfo(weather.weather_code, weather.is_day === 1);
 
   return (
     <section className="rounded-2xl border border-border bg-card p-6">

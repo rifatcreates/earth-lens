@@ -7,6 +7,7 @@ export interface CurrentWeather {
   wind_speed_10m: number;
   uv_index: number;
   visibility: number;
+  is_day: number;
 }
 
 export interface HourlyWeather {
